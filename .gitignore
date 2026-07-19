@@ -1,0 +1,5 @@
+.secrets
+.env
+.env.*
+.DS_Store
+_future/

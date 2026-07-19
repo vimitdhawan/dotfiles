@@ -1,0 +1,4 @@
+# These files live in the repo but are NOT dotfiles — don't copy to ~
+Brewfile
+README.md
+_future/**
