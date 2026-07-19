@@ -65,8 +65,8 @@ brew "awscli"
 # ── Other ────────────────────────────────────────────────────────────────────
 brew "ollama"
 
-# ── GUI Applications ────────────────────────────────────────────────────────
-cask "docker"               # Docker Desktop
+# ── GUI Applications (shared across all machines) ───────────────────────────
+# Machine-specific apps (Docker Desktop vs Colima) are in Brewfile.personal / Brewfile.work
 cask "visual-studio-code"
 cask "goland"
 cask "slack"

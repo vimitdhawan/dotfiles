@@ -1,0 +1,10 @@
+{{- $machineType := promptChoiceOnce . "data.machine_type" "Machine type" (list "personal" "work") -}}
+{{- $gitName := promptStringOnce . "data.git_name" "Git full name" "Vimit Dhawan" -}}
+{{- $gitEmailPersonal := promptStringOnce . "data.git_email_personal" "Personal git email" "vimit0601@live.com" -}}
+{{- $gitEmailWork := promptStringOnce . "data.git_email_work" "Work git email" "vimit.dhawan@foodpanda.co.th" -}}
+
+[data]
+    machine_type = {{ $machineType | quote }}
+    git_name = {{ $gitName | quote }}
+    git_email_personal = {{ $gitEmailPersonal | quote }}
+    git_email_work = {{ $gitEmailWork | quote }}

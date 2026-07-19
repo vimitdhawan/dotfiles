@@ -1,6 +1,19 @@
 [user]
-	name = Vimit Dhawan
-	email = vimit0601@live.com
+	name = {{ .git_name }}
+{{- if eq .machine_type "work" }}
+	email = {{ .git_email_work }}
+{{- else }}
+	email = {{ .git_email_personal }}
+{{- end }}
+
+# ── Multi-account: directory-based email override ────────────────────────────
+# Repos under ~/Work/ use work email, repos under ~/Personal/ use personal email
+# This works on BOTH machines — clone work repos into ~/Work/, personal into ~/Personal/
+[includeIf "gitdir:~/Work/"]
+	path = ~/.config/git/work
+
+[includeIf "gitdir:~/Personal/"]
+	path = ~/.config/git/personal
 
 [pull]
 	rebase = false
@@ -13,7 +26,7 @@
 	defaultBranch = main
 
 [core]
-	editor = code --wait
+	editor = nvim
 	pager = delta
 	excludesFile = ~/.config/git/ignore
 

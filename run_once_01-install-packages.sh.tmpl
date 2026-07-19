@@ -1,0 +1,44 @@
+#!/bin/bash
+# run_once_01-install-packages.sh — chezmoi runs this ONCE on first apply
+# Installs Homebrew (if missing), shared packages, and machine-specific packages.
+
+set -uo pipefail
+
+MACHINE_TYPE={{ .machine_type | quote }}
+echo "── chezmoi run_once: installing packages (machine: $MACHINE_TYPE) ──"
+
+# ── Install Homebrew if not present ──────────────────────────────────────────
+if ! command -v brew &>/dev/null; then
+  echo "→ Homebrew not found. Installing..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+  # Add brew to PATH for the rest of this script (Apple Silicon vs Intel)
+  if [[ -d "/opt/homebrew/bin" ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  elif [[ -d "/usr/local/bin" ]]; then
+    eval "$(/usr/local/bin/brew shellenv)"
+  fi
+else
+  echo "→ Homebrew already installed."
+fi
+
+# ── Install shared packages ──────────────────────────────────────────────────
+# Use chezmoi template to resolve source path at render time (avoids lock conflict)
+SOURCE_DIR={{ .chezmoi.sourceDir | quote }}
+
+if [[ -f "$SOURCE_DIR/Brewfile" ]]; then
+  echo "→ Installing shared packages..."
+  brew bundle --file="$SOURCE_DIR/Brewfile" || echo "⚠ Some shared packages failed."
+fi
+
+# ── Install machine-specific packages ────────────────────────────────────────
+MACHINE_BREWFILE="$SOURCE_DIR/Brewfile.$MACHINE_TYPE"
+
+if [[ -f "$MACHINE_BREWFILE" ]]; then
+  echo "→ Installing $MACHINE_TYPE-specific packages..."
+  brew bundle --file="$MACHINE_BREWFILE" || echo "⚠ Some $MACHINE_TYPE packages failed."
+else
+  echo "⚠ No machine-specific Brewfile found at $MACHINE_BREWFILE — skipping."
+fi
+
+echo "── done ──"

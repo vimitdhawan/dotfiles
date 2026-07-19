@@ -1,4 +1,6 @@
 # These files live in the repo but are NOT dotfiles — don't copy to ~
 Brewfile
+Brewfile.personal
+Brewfile.work
 README.md
 _future/**

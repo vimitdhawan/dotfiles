@@ -1,0 +1,14 @@
+# ~/.config/git/ignore — global gitignore
+.DS_Store
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+*~
+.env
+.env.*
+node_modules/
+__pycache__/
+*.pyc
+.direnv/
