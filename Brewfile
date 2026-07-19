@@ -1,5 +1,5 @@
-# Brewfile — tracked by dotfiles, installed manually with: brew bundle
-# NOT auto-installed by chezmoi. This is just a record of what you use.
+# Brewfile — tracked by dotfiles
+# Install: brew bundle --file=~/Vimit_Codebase/dotfiles/Brewfile
 
 # ── Core CLI ─────────────────────────────────────────────────────────────────
 brew "git"
@@ -11,6 +11,8 @@ brew "jq"
 brew "yq"
 brew "tree"
 brew "tldr"
+brew "httpie"               # user-friendly HTTP client (better curl for APIs)
+brew "shellcheck"           # lint your shell scripts
 
 # ── Modern Unix ──────────────────────────────────────────────────────────────
 brew "bat"
@@ -28,15 +30,15 @@ brew "chezmoi"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 
+# ── Version Manager ──────────────────────────────────────────────────────────
+brew "mise"                 # manages Go, Node, Python versions per project
+
 # ── Git ──────────────────────────────────────────────────────────────────────
 brew "gh"
 
-# ── Languages ────────────────────────────────────────────────────────────────
-brew "go"
-brew "golangci-lint"
-brew "node"
-brew "pnpm"
-brew "uv"
+# ── Languages (tools that mise does NOT manage) ──────────────────────────────
+brew "golangci-lint"        # Go linter (standalone binary, not a runtime)
+brew "pnpm"                 # Node package manager
 
 # ── Kubernetes ───────────────────────────────────────────────────────────────
 brew "kubernetes-cli"

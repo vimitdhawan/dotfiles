@@ -1,0 +1,11 @@
+# ~/.config/mise/config.toml — global default versions
+# Override per-project with a local mise.toml
+
+[tools]
+go     = "1.24"    # latest 1.24.x
+node   = "22"      # LTS
+python = "3.13"    # latest 3.13.x
+
+[settings]
+# auto-install missing tool versions on `cd` into a project
+auto_install = true
