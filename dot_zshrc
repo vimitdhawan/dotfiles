@@ -43,13 +43,14 @@ source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" 2>/d
 eval "$(starship init zsh)"       # prompt
 eval "$(zoxide init zsh)"         # smart cd
 eval "$(mise activate zsh)"       # version manager (go, node, python)
+eval "$(direnv hook zsh)"         # auto-load .envrc per project
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # Environment Variables
 # ═══════════════════════════════════════════════════════════════════════════════
-export EDITOR="vim"
+export EDITOR="nvim"
 export VISUAL="code --wait"
 export LANG="en_US.UTF-8"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"  # bat as man pager
@@ -116,7 +117,14 @@ alias pir="uv pip install -r requirements.txt"
 # ═══════════════════════════════════════════════════════════════════════════════
 # Aliases — Editors
 # ═══════════════════════════════════════════════════════════════════════════════
-alias v="vim"
+alias v="nvim"
+alias vim="nvim"
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# Aliases — Dev Tools
+# ═══════════════════════════════════════════════════════════════════════════════
+alias lg="lazygit"
+alias lzd="lazydocker"
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # Aliases — Network

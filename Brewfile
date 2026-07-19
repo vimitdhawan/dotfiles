@@ -23,10 +23,12 @@ brew "ripgrep"
 brew "zoxide"
 brew "delta"
 brew "btop"
+brew "hyperfine"            # CLI benchmarking: hyperfine 'go build ./...'
 
 # ── Shell ────────────────────────────────────────────────────────────────────
 brew "starship"
 brew "chezmoi"
+brew "direnv"               # auto-load .envrc per project directory
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 
@@ -35,10 +37,21 @@ brew "mise"                 # manages Go, Node, Python versions per project
 
 # ── Git ──────────────────────────────────────────────────────────────────────
 brew "gh"
+brew "lazygit"              # TUI for git — staging, rebase, branches
+brew "git-extras"           # ~60 useful git commands (summary, effort, standup)
+
+# ── Editors ──────────────────────────────────────────────────────────────────
+brew "neovim"               # terminal editor
 
 # ── Languages (tools that mise does NOT manage) ──────────────────────────────
 brew "golangci-lint"        # Go linter (standalone binary, not a runtime)
 brew "pnpm"                 # Node package manager
+
+# ── Task Runner ──────────────────────────────────────────────────────────────
+brew "just"                 # modern make alternative — project-specific commands
+
+# ── Docker ───────────────────────────────────────────────────────────────────
+brew "lazydocker"           # TUI for Docker containers, images, logs
 
 # ── Kubernetes ───────────────────────────────────────────────────────────────
 brew "kubernetes-cli"
@@ -52,7 +65,15 @@ brew "awscli"
 # ── Other ────────────────────────────────────────────────────────────────────
 brew "ollama"
 
-# ── Casks ────────────────────────────────────────────────────────────────────
+# ── GUI Applications ────────────────────────────────────────────────────────
+cask "docker"               # Docker Desktop
+cask "visual-studio-code"
+cask "goland"
+cask "slack"
+cask "google-chrome"
+cask "postman"
+
+# ── Terminals ────────────────────────────────────────────────────────────────
 cask "ghostty"
 cask "iterm2"
 
