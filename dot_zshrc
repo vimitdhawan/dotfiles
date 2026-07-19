@@ -151,7 +151,7 @@ alias dotsu="chezmoi update"
 # Functions
 # ═══════════════════════════════════════════════════════════════════════════════
 mkcd() { mkdir -p "$1" && cd "$1"; }
-gcm() { git add -A && git commit -m "$1"; }
+gitcommit() { git add -A && git commit -m "$1"; }
 kctx() { kubectl config use-context "$1"; }
 port() { lsof -i ":$1" 2>/dev/null; }
 
