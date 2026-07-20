@@ -3,4 +3,5 @@ Brewfile
 Brewfile.personal
 Brewfile.work
 README.md
+scripts/**
 _future/**

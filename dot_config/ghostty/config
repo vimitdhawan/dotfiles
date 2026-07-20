@@ -1,0 +1,22 @@
+# Ghostty terminal — managed by chezmoi
+# Docs: https://ghostty.org/docs/config
+
+# Font
+font-family = "JetBrains Mono"
+font-size = 14
+
+# Theme
+theme = dark:catppuccin-mocha,light:catppuccin-latte
+
+# Window
+window-padding-x = 8
+window-padding-y = 4
+window-decoration = true
+macos-titlebar-style = tabs
+
+# Shell integration
+shell-integration = zsh
+
+# Behavior
+copy-on-select = clipboard
+confirm-close-surface = false

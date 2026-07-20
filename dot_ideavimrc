@@ -1,0 +1,61 @@
+" ~/.ideavimrc — IdeaVim config for GoLand/IntelliJ
+" Managed by chezmoi
+" Shares muscle memory with Neovim keybindings
+
+" Core settings
+set scrolloff=8
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
+set number
+set relativenumber
+set showmode
+set clipboard+=unnamed
+
+" Leader key
+let mapleader=" "
+
+" Navigation
+nmap <leader>e :NERDTree<CR>
+nmap <leader>ff <Action>(GotoFile)
+nmap <leader>fg <Action>(FindInPath)
+nmap <leader>fb <Action>(RecentFiles)
+nmap <leader>fs <Action>(GotoSymbol)
+
+" Code actions
+nmap gd <Action>(GotoDeclaration)
+nmap gi <Action>(GotoImplementation)
+nmap gr <Action>(FindUsages)
+nmap <leader>ca <Action>(ShowIntentionActions)
+nmap <leader>cr <Action>(RenameElement)
+nmap K <Action>(QuickJavaDoc)
+
+" Window navigation (match tmux/nvim)
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
+" Buffer navigation
+nmap <S-h> <Action>(PreviousTab)
+nmap <S-l> <Action>(NextTab)
+
+" Run & Debug
+nmap <leader>rr <Action>(Run)
+nmap <leader>rd <Action>(Debug)
+nmap <leader>rt <Action>(RunClass)
+nmap <leader>rs <Action>(Stop)
+
+" Git
+nmap <leader>gg <Action>(ActivateVersionControlToolWindow)
+nmap <leader>gb <Action>(Annotate)
+
+" Refactoring
+nmap <leader>rm <Action>(ExtractMethod)
+nmap <leader>rv <Action>(IntroduceVariable)
+nmap <leader>ri <Action>(Inline)
+
+" Plugins (install in GoLand: IdeaVim, IdeaVim-EasyMotion, NERDTree)
+set NERDTree
+set easymotion

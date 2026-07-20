@@ -1,4 +1,4 @@
 # Brewfile.personal — packages only for personal machines
 # Installed automatically by chezmoi run_once script when machine_type = personal
 
-cask "docker"               # Docker Desktop (not allowed on work machines)
+cask "docker"               # Docker Desktop

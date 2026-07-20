@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# 04 — Install VS Code extensions (re-runs when extensions list changes)
+# chezmoi: run_onchange
+# Extensions hash: {{ include "scripts/vscode-extensions.txt" | sha256sum }}
+
+set -euo pipefail
+
+if ! command -v code &>/dev/null; then
+  echo "VS Code CLI not found, skipping extensions."
+  exit 0
+fi
+
+echo "── chezmoi run_onchange: installing VS Code extensions ──"
+while IFS= read -r ext; do
+  [ -z "$ext" ] && continue
+  [[ "$ext" == \#* ]] && continue
+  code --install-extension "$ext" --force 2>/dev/null || echo "  Failed: $ext"
+done < "{{ .chezmoi.sourceDir }}/scripts/vscode-extensions.txt"
+echo "── done ──"

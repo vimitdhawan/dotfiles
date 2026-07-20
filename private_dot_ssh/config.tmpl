@@ -1,0 +1,24 @@
+# ~/.ssh/config — managed by chezmoi
+
+# ── Defaults for all hosts ───────────────────────────────────────────────────
+Host *
+    AddKeysToAgent yes
+    UseKeychain yes
+    IdentitiesOnly yes
+    ServerAliveInterval 60
+    ServerAliveCountMax 3
+
+# ── GitHub (personal key) ────────────────────────────────────────────────────
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_ed25519
+
+{{ if eq .machine_type "work" -}}
+# ── Work-specific hosts ──────────────────────────────────────────────────────
+# Add bastion servers, internal git, jump boxes below:
+# Host bastion.foodpanda.com
+#     HostName bastion.foodpanda.com
+#     User vimit.dhawan
+#     IdentityFile ~/.ssh/id_ed25519_work
+{{ end -}}

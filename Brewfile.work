@@ -1,6 +1,15 @@
 # Brewfile.work — packages only for work machines
 # Installed automatically by chezmoi run_once script when machine_type = work
 
-brew "colima"               # Docker runtime (company policy: no Docker Desktop)
-brew "docker"               # Docker CLI (colima provides the runtime)
-brew "docker-compose"       # compose plugin for colima
+# ── Docker (Colima — company policy: no Docker Desktop) ─────────────────────
+brew "colima"
+brew "docker"
+brew "docker-compose"
+
+# ── Auth ─────────────────────────────────────────────────────────────────────
+tap "versent/taps"
+brew "versent/taps/saml2aws"    # SAML-based AWS credential helper
+
+# ── GUI Applications (work only) ────────────────────────────────────────────
+cask "goland"
+cask "slack"

@@ -1,0 +1,5 @@
+# ~/.npmrc — managed by chezmoi
+save-exact=true
+fund=false
+audit=false
+loglevel=warn

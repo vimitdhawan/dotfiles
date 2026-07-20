@@ -66,10 +66,9 @@ brew "awscli"
 brew "ollama"
 
 # ── GUI Applications (shared across all machines) ───────────────────────────
-# Machine-specific apps (Docker Desktop vs Colima) are in Brewfile.personal / Brewfile.work
+# Machine-specific apps are in Brewfile.personal / Brewfile.work
+cask "raycast"              # launcher — replaces Spotlight, clipboard manager, window manager
 cask "visual-studio-code"
-cask "goland"
-cask "slack"
 cask "google-chrome"
 cask "postman"
 
