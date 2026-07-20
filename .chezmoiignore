@@ -5,3 +5,6 @@ Brewfile.work
 README.md
 scripts/**
 _future/**
+
+# Git placeholder files — not needed in ~
+**/.gitkeep

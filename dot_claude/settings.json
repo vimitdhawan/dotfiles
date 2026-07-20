@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/claude-code-settings.json",
+  "theme": "dark",
+  "effortLevel": "low",
+  "enabledPlugins": {},
+  "extraKnownMarketplaces": {
+    "claude-plugins-official": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/claude-plugins-official"
+      }
+    }
+  }
+}
