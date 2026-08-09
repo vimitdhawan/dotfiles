@@ -6,7 +6,7 @@ font-family = "JetBrains Mono"
 font-size = 14
 
 # Theme
-theme = dark:catppuccin-mocha,light:catppuccin-latte
+theme = dark:Catppuccin Mocha,light:Catppuccin Latte
 
 # Window
 window-padding-x = 8
